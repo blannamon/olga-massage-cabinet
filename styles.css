@@ -1400,12 +1400,18 @@ button, input, textarea, select { font: inherit; }
   .mobile-menu.is-open {
     display: grid;
     gap: 4px;
+    justify-items: center;
+    text-align: center;
   }
   .mobile-menu a:not(.btn) {
     min-height: 34px;
     display: flex;
     align-items: center;
-    font-weight: 700;
+    justify-content: center;
+    font-weight: 500;
+  }
+  .mobile-menu .btn {
+    margin-top: 4px;
   }
   .hero {
     min-height: 0;
