@@ -64,6 +64,13 @@ faqBoards.forEach((board) => {
   const answerCard = board.querySelector(".faq-answer-card");
   const answerText = board.querySelector("[data-faq-answer-text]");
   const answerIndex = board.querySelector("[data-faq-index]");
+  const mobileFaqQuery = window.matchMedia("(max-width: 720px)");
+
+  const syncQuestionFocus = () => {
+    questions.forEach((item) => {
+      item.setAttribute("tabindex", mobileFaqQuery.matches || item.classList.contains("is-active") ? "0" : "-1");
+    });
+  };
 
   const activateQuestion = (question, focus = false) => {
     const activeIndex = questions.indexOf(question);
@@ -72,8 +79,8 @@ faqBoards.forEach((board) => {
       const isActive = item === question;
       item.classList.toggle("is-active", isActive);
       item.setAttribute("aria-selected", String(isActive));
-      item.setAttribute("tabindex", isActive ? "0" : "-1");
     });
+    syncQuestionFocus();
 
     if (answerCard) {
       answerCard.setAttribute("aria-labelledby", question.id);
@@ -90,7 +97,7 @@ faqBoards.forEach((board) => {
   };
 
   questions.forEach((question, index) => {
-    question.setAttribute("tabindex", question.classList.contains("is-active") ? "0" : "-1");
+    syncQuestionFocus();
 
     question.addEventListener("click", () => activateQuestion(question));
     question.addEventListener("keydown", (event) => {
@@ -109,4 +116,6 @@ faqBoards.forEach((board) => {
       }
     });
   });
+
+  mobileFaqQuery.addEventListener("change", syncQuestionFocus);
 });
