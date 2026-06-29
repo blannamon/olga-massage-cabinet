@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+temporary_screenshots/
+.playwright-mcp/
+ref.jpeg
+assets/photos raw/
+assets/images/.DS_Store
