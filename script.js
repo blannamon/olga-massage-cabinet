@@ -3,7 +3,6 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const revealItems = document.querySelectorAll(".reveal");
 const reviewTrack = document.querySelector("[data-reviews]");
-const customSelects = document.querySelectorAll("[data-custom-select]");
 const faqBoards = document.querySelectorAll("[data-faq-tabs]");
 
 if (window.lucide?.createIcons && window.lucide?.icons) {
@@ -109,77 +108,5 @@ faqBoards.forEach((board) => {
         activateQuestion(questions[keyMap[event.key]], true);
       }
     });
-  });
-});
-
-const closeCustomSelect = (select) => {
-  select.classList.remove("is-open");
-  select.querySelector("[data-custom-select-button]")?.setAttribute("aria-expanded", "false");
-};
-
-const openCustomSelect = (select) => {
-  customSelects.forEach((item) => {
-    if (item !== select) closeCustomSelect(item);
-  });
-  select.classList.add("is-open");
-  select.querySelector("[data-custom-select-button]")?.setAttribute("aria-expanded", "true");
-};
-
-customSelects.forEach((select) => {
-  const trigger = select.querySelector("[data-custom-select-button]");
-  const valueLabel = select.querySelector("[data-custom-select-value]");
-  const hiddenInput = select.querySelector('input[type="hidden"]');
-  const options = [...select.querySelectorAll('[role="option"]')];
-
-  const chooseOption = (option) => {
-    options.forEach((item) => item.setAttribute("aria-selected", String(item === option)));
-    if (valueLabel) valueLabel.textContent = option.textContent;
-    if (hiddenInput) hiddenInput.value = option.dataset.value || option.textContent || "";
-    closeCustomSelect(select);
-    trigger?.focus();
-  };
-
-  trigger?.addEventListener("click", () => {
-    if (select.classList.contains("is-open")) {
-      closeCustomSelect(select);
-    } else {
-      openCustomSelect(select);
-    }
-  });
-
-  trigger?.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-      event.preventDefault();
-      openCustomSelect(select);
-      const selected = options.find((option) => option.getAttribute("aria-selected") === "true");
-      (selected || options[0])?.focus();
-    }
-    if (event.key === "Escape") closeCustomSelect(select);
-  });
-
-  options.forEach((option, index) => {
-    option.addEventListener("click", () => chooseOption(option));
-    option.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        chooseOption(option);
-      }
-      if (event.key === "Escape") {
-        closeCustomSelect(select);
-        trigger?.focus();
-      }
-      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-        event.preventDefault();
-        const direction = event.key === "ArrowDown" ? 1 : -1;
-        const nextIndex = (index + direction + options.length) % options.length;
-        options[nextIndex]?.focus();
-      }
-    });
-  });
-});
-
-document.addEventListener("click", (event) => {
-  customSelects.forEach((select) => {
-    if (!select.contains(event.target)) closeCustomSelect(select);
   });
 });

@@ -424,6 +424,8 @@ Section headings use a consistent pattern:
 2. Small botanical or ornamental divider
 3. Content begins approximately 24–32 px below
 
+The branded divider is fixed as a decorative botanical separator: two thin gold-beige horizontal lines fading outward, with a small centered four-petal flower ornament in the same gold-beige tone.
+
 The vertical rhythm becomes slightly tighter toward the bottom of the page, where FAQ, contact details, and the footer are more utility-focused.
 
 On mobile, recommended spacing is:

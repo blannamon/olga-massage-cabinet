@@ -286,45 +286,40 @@
           </figure>
           <div class="contact-details reveal">
             <div class="contact-details-inner">
-              <h2>Контакты</h2>
-              <p>Кабинет: г. Тирасполь, ТЦ "Причерноморье", ул. Юности 6. Ежедневно&nbsp;с&nbsp;09:00&nbsp;до&nbsp;21:00,&nbsp;график&nbsp;скользящий.</p>
-              <ul>
-                <li><span><i data-lucide="phone" aria-hidden="true"></i></span><a href="tel:+37377899366">+373 778 99 366</a></li>
-                <li><span><i data-lucide="send" aria-hidden="true"></i></span><a href="https://t.me/+37377899366">Telegram</a></li>
-                <li><span><i data-lucide="messages-square" aria-hidden="true"></i></span><a href="viber://chat?number=%2B37377899366">Viber</a></li>
-                <li><span><i data-lucide="message-circle" aria-hidden="true"></i></span><a href="https://wa.me/37377899366">WhatsApp</a></li>
-                <li><span><i data-lucide="instagram" aria-hidden="true"></i></span><a href="https://www.instagram.com/" aria-label="Instagram Olga massage">Instagram</a></li>
-              </ul>
+              <div class="contacts-wrapper">
+                <h2>Контакты</h2>
+                <p>Кабинет: г. Тирасполь, ТЦ "Причерноморье", ул. Юности 6. Ежедневно&nbsp;с&nbsp;09:00&nbsp;до&nbsp;21:00,&nbsp;график&nbsp;скользящий.</p>
+                <ul>
+                  <li><span><i data-lucide="phone" aria-hidden="true"></i></span><a href="tel:+37377899366">+373 778 99 366</a></li>
+                  <li><span><i data-lucide="send" aria-hidden="true"></i></span><a href="https://t.me/+37377899366">Telegram</a></li>
+                  <li><span><i data-lucide="messages-square" aria-hidden="true"></i></span><a href="viber://chat?number=%2B37377899366">Viber</a></li>
+                  <li><span><i data-lucide="message-circle" aria-hidden="true"></i></span><a href="https://wa.me/37377899366">WhatsApp</a></li>
+                  <li><span><i data-lucide="instagram" aria-hidden="true"></i></span><a href="https://www.instagram.com/_massage_tiraspol" aria-label="Instagram Olga massage">Instagram</a></li>
+                </ul>
+              </div>
+              <div class="lead-form contact-lead-form">
+                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <div class="lead-form-inner">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="netlify-hidden">
+                      <label>Не заполняйте это поле <input name="bot-field"></label>
+                    </p>
+                    <h2>Напишите мне</h2>
+                    <p>Ответы на вопросы и запись</p>
+                    <div class="form-row">
+                      <label><span>Ваше имя</span><input name="name" autocomplete="name" placeholder="Ваше имя"></label>
+                      <label><span>Телефон</span><input name="phone" autocomplete="tel" placeholder="Телефон"></label>
+                    </div>
+                    <label><span>Сообщение</span><textarea name="message" rows="4" placeholder="Сообщение"></textarea></label>
+                    <button class="btn btn-primary" type="submit">Отправить</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-          <form class="lead-form reveal" action="mailto:+37377899366" method="post" enctype="text/plain">
-            <div class="lead-form-inner">
-              <h2>Напишите мне</h2>
-              <p>Ответы на вопросы и запись</p>
-              <div class="form-row">
-                <label><span>Ваше имя</span><input name="name" autocomplete="name" placeholder="Ваше имя"></label>
-                <label><span>Телефон</span><input name="phone" autocomplete="tel" placeholder="Телефон"></label>
-              </div>
-              <div class="form-field">
-                <span class="field-label" id="messenger-label">Удобный способ связи</span>
-                <div class="custom-select" data-custom-select>
-                  <input type="hidden" name="messenger" value="WhatsApp">
-                  <button class="custom-select-button" type="button" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="messenger-label messenger-value" data-custom-select-button>
-                    <span id="messenger-value" data-custom-select-value>WhatsApp</span>
-                    <span class="custom-select-arrow" aria-hidden="true"><i data-lucide="chevron-down"></i></span>
-                  </button>
-                  <div class="custom-select-list" role="listbox" aria-labelledby="messenger-label" data-custom-select-list>
-                    <button type="button" role="option" aria-selected="true" data-value="WhatsApp">WhatsApp</button>
-                    <button type="button" role="option" aria-selected="false" data-value="Telegram">Telegram</button>
-                    <button type="button" role="option" aria-selected="false" data-value="Viber">Viber</button>
-                    <button type="button" role="option" aria-selected="false" data-value="Телефон">Телефон</button>
-                  </div>
-                </div>
-              </div>
-              <label><span>Сообщение</span><textarea name="message" rows="4" placeholder="Сообщение"></textarea></label>
-              <button class="btn btn-primary" type="submit">Отправить</button>
-            </div>
-          </form>
+          <div class="contact-map reveal">
+            <iframe title="Карта: массажный кабинет Дормы Ольги" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d341.1601948097264!2d29.660313!3d46.838147!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c903fb6533708d%3A0x5b92e9995434c605!2z0JzQsNGB0YHQsNC20L3Ri9C5INC60LDQsdC40L3QtdGCINCU0L7RgNC80Ysg0J7Qu9GM0LPQuA!5e0!3m2!1sru!2sus!4v1782732991280!5m2!1sru!2sus" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
     </main>
@@ -346,7 +341,7 @@
           Тирасполь, Балка, ТЦ «Причерноморье», ул. Юности, 6
         </address>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/_massage_tiraspol" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
           <a href="https://t.me/+37377899366" aria-label="Telegram"><i data-lucide="send" aria-hidden="true"></i></a>
           <a href="https://wa.me/37377899366" aria-label="WhatsApp"><i data-lucide="message-circle" aria-hidden="true"></i></a>
         </div>
