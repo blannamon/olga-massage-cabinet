@@ -130,21 +130,21 @@ Requirements:
 Add reciprocal language annotations to both pages:
 
 ```html
-<link rel="alternate" hreflang="ru" href="https://example.com/">
-<link rel="alternate" hreflang="en" href="https://example.com/en/">
-<link rel="alternate" hreflang="x-default" href="https://example.com/">
+<link rel="alternate" hreflang="ru" href="https://olga-dorma-massage.netlify.app/">
+<link rel="alternate" hreflang="en" href="https://olga-dorma-massage.netlify.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://olga-dorma-massage.netlify.app/">
 ```
 
-Use absolute production URLs. Replace `example.com` through a central `SITE_URL` configuration value.
+Use absolute production URLs. Production domain: `https://olga-dorma-massage.netlify.app/`.
 
 Each language page must have a self-referencing canonical URL:
 
 ```html
 <!-- Russian page -->
-<link rel="canonical" href="https://example.com/">
+<link rel="canonical" href="https://olga-dorma-massage.netlify.app/">
 
 <!-- English page -->
-<link rel="canonical" href="https://example.com/en/">
+<link rel="canonical" href="https://olga-dorma-massage.netlify.app/en/">
 ```
 
 Never canonicalize the English page to the Russian page or vice versa.
@@ -323,14 +323,14 @@ Recommended base structure:
 {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
-  "@id": "https://example.com/#business",
+  "@id": "https://olga-dorma-massage.netlify.app/#business",
   "name": "[CONFIRMED BUSINESS NAME]",
-  "url": "https://example.com/",
+  "url": "https://olga-dorma-massage.netlify.app/",
   "telephone": "+37377899366",
   "image": [
-    "https://example.com/images/olga-massage-1x1.jpg",
-    "https://example.com/images/olga-massage-4x3.jpg",
-    "https://example.com/images/olga-massage-16x9.jpg"
+    "https://olga-dorma-massage.netlify.app/images/olga-massage-1x1.jpg",
+    "https://olga-dorma-massage.netlify.app/images/olga-massage-4x3.jpg",
+    "https://olga-dorma-massage.netlify.app/images/olga-massage-16x9.jpg"
   ],
   "address": {
     "@type": "PostalAddress",
@@ -445,7 +445,7 @@ Production `robots.txt`:
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://olga-dorma-massage.netlify.app/sitemap.xml
 ```
 
 The XML sitemap must:
@@ -516,9 +516,12 @@ Add localized Open Graph metadata to every language page:
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Массаж в Тирасполе — Ольга">
 <meta property="og:description" content="Профессиональный массаж и мадеротерапия в Тирасполе.">
-<meta property="og:url" content="https://example.com/">
-<meta property="og:image" content="https://example.com/images/og-massage-tiraspol.jpg">
-<meta property="og:image:alt" content="Массажный кабинет Ольги в Тирасполе">
+<meta property="og:url" content="https://olga-dorma-massage.netlify.app/">
+<meta property="og:image" content="https://olga-dorma-massage.netlify.app/assets/images/OG%20Image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1731">
+<meta property="og:image:height" content="909">
+<meta property="og:image:alt" content="Массажный кабинет Дормы Ольги в Тирасполе">
 ```
 
 English page:
@@ -604,10 +607,16 @@ If individual service pages are added later, each page must contain substantial,
 
 В локальной версии лендинга уже реализовано:
 
+* ~~A separate working SEO optimization checklist exists.~~ См. `SEO-OPTIMIZATION-CHECKLIST.md`.
 * ~~Russian and English pages have separate crawlable URLs.~~ `/` и `/en/`.
 * ~~Each page has the correct `lang` attribute.~~ `ru` и `en`.
 * ~~Reciprocal `hreflang` annotations are present.~~ Добавлены для RU, EN и `x-default`.
-* ~~Canonical URLs are absolute and self-referencing.~~ Используется временный `https://example.com/`, заменить на production URL перед публикацией.
+* ~~Canonical URLs are absolute and self-referencing.~~ Используется production URL `https://olga-dorma-massage.netlify.app/`.
+* ~~Temporary production URLs have been replaced.~~ Production-домен используется в canonical, hreflang, Open Graph и SEO-примерах.
+* ~~Production robots.txt exists.~~ Разрешает индексацию и указывает `https://olga-dorma-massage.netlify.app/sitemap.xml`.
+* ~~Production sitemap.xml exists.~~ Включает только канонические URL `/` и `/en/` с production-доменом.
+* ~~LocalBusiness JSON-LD exists.~~ Добавлен `HealthAndBeautyBusiness` на RU и EN страницы без цен, рейтингов, координат и медицинских типов.
+* ~~Open Graph image uses the dedicated social image.~~ `og:image` и `twitter:image` указывают на `assets/images/OG Image.png`.
 * ~~Titles and descriptions are unique and localized.~~ Добавлены русские и английские title/meta description.
 * ~~Each page has one clear H1.~~
 * ~~Heading hierarchy is valid.~~
