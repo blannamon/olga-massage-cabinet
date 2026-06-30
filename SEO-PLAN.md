@@ -628,6 +628,14 @@ If individual service pages are added later, each page must contain substantial,
 * ~~Hero image is not lazy-loaded.~~
 * ~~Below-the-fold images are lazy-loaded.~~
 * ~~No broken internal navigation links remain in the local static build.~~
+* ~~Production HTTPS works.~~ Проверено на `https://olga-dorma-massage.netlify.app/`.
+* ~~HTTP redirects to HTTPS with 301.~~ Проверено для production-домена.
+* ~~Valid production URLs return HTTP 200.~~ `/` и `/en/` возвращают `200`.
+* ~~Invalid production URLs return a real HTTP 404.~~ Проверено на тестовом отсутствующем URL; добавлена кастомная `404.html`.
+* ~~A single trailing-slash strategy is configured.~~ Добавлены Netlify redirects для `/index.html`, `/en` и `/en/index.html`.
+* ~~Production pages do not contain `noindex`.~~ Проверено для RU и EN страниц.
+* ~~Deploy previews and branch deploys are protected from indexing.~~ Добавлен `X-Robots-Tag: noindex, nofollow` через Netlify preview headers.
+* ~~CSS, JS, fonts, and images are crawlable.~~ Assets доступны по production URL, основной контент находится в initial HTML.
 
 Before declaring the website complete, verify all of the following:
 

@@ -40,7 +40,7 @@
 - [x] Использовать безопасный тип structured data: `HealthAndBeautyBusiness` или подходящий `LocalBusiness` subtype.
 - [x] Не добавлять `MedicalClinic`, `Physician`, `Doctor`, `Physiotherapist`, если клиент не подтвердит юридические основания.
 - [x] Не добавлять `aggregateRating`, review schema, цены, координаты или неподтвержденные поля.
-- [ ] Провалидировать JSON-LD через Google Rich Results Test и Schema Markup Validator.
+- [x] Провалидировать JSON-LD через Google Rich Results Test и Schema Markup Validator.
 - [x] Создать отдельное social image 1200x630 для Open Graph/Twitter.
 - [x] Заменить `og:image` на production URL этой social image.
 - [ ] Добавить реальную страницу политики конфиденциальности вместо ссылки `#`.
@@ -71,31 +71,31 @@
 
 ## Crawlability и production-настройки
 
-- [ ] Production сайт открывается по HTTPS.
-- [ ] HTTP перенаправляется на HTTPS через 301.
-- [ ] Все варианты hostname перенаправляются на один canonical hostname.
-- [ ] Выбрана и соблюдается единая trailing-slash стратегия.
-- [ ] `/` возвращает HTTP 200.
-- [ ] `/en/` возвращает HTTP 200.
-- [ ] Несуществующие URL возвращают реальный HTTP 404.
-- [ ] Production pages не содержат `noindex`.
-- [ ] Preview, staging и deploy-preview окружения закрыты от индексации.
-- [ ] CSS, JS, fonts и изображения доступны поисковым роботам.
-- [ ] Основной контент присутствует в initial HTML и понятен без JavaScript.
+- [x] Production сайт открывается по HTTPS.
+- [x] HTTP перенаправляется на HTTPS через 301.
+- [ ] Все варианты hostname перенаправляются на один canonical hostname. Нужна доменная настройка в Netlify для любых дополнительных hostname; `www.olga-dorma-massage.netlify.app` сейчас не является корректно настроенным HTTPS-hostname.
+- [x] Выбрана и соблюдается единая trailing-slash стратегия: `/en` и `/en/index.html` перенаправляются на `/en/`, `/index.html` перенаправляется на `/`.
+- [x] `/` возвращает HTTP 200.
+- [x] `/en/` возвращает HTTP 200.
+- [x] Несуществующие URL возвращают реальный HTTP 404.
+- [x] Production pages не содержат `noindex`.
+- [x] Preview, staging и deploy-preview окружения закрыты от индексации через `X-Robots-Tag: noindex, nofollow`.
+- [x] CSS, JS, fonts и изображения доступны поисковым роботам.
+- [x] Основной контент присутствует в initial HTML и понятен без JavaScript.
 
 ## Local SEO вне сайта
 
-- [ ] Создать или обновить Google Business Profile.
-- [ ] Использовать единый NAP во всех источниках:
+- [x] Создать или обновить Google Business Profile.
+- [x] Использовать единый NAP во всех источниках:
   - Массажный кабинет Дормы Ольги
   - г. Тирасполь, Балка, ТЦ "Причерноморье", ул. Юности, 6
   - +373 778 99 366
-- [ ] Добавить production URL в Google Business Profile.
+- [x] Добавить production URL в Google Business Profile.
 - [ ] Добавить тот же production URL в Instagram.
-- [ ] Проверить совпадение часов работы на сайте, Google Business Profile и Instagram.
-- [ ] Добавить сайт в Google Search Console.
-- [ ] Отправить `sitemap.xml` в Google Search Console.
-- [ ] Проверить `/` и `/en/` через URL Inspection.
+- [x] Проверить совпадение часов работы на сайте, Google Business Profile и Instagram.
+- [x] Добавить сайт в Google Search Console.
+- [x] Отправить `sitemap.xml` в Google Search Console.
+- [x] Проверить `/` и `/en/` через URL Inspection.
 - [ ] Проверить индексируемость после публикации.
 
 ## Возможные улучшения после запуска

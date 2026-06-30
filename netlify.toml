@@ -1,0 +1,27 @@
+[build]
+  command = "node netlify/build.mjs"
+  publish = "dist"
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/index.html"
+  to = "/en/"
+  status = 301
+  force = true
+
+[context.deploy-preview]
+  command = "node netlify/build.mjs && cp netlify/preview-headers dist/_headers"
+
+[context.branch-deploy]
+  command = "node netlify/build.mjs && cp netlify/preview-headers dist/_headers"
